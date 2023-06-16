@@ -7,7 +7,7 @@ pipeline {
         
     stage('Git') {
       steps {
-        git 'https://github.com/githaefrancis/next-js-blog.git
+        git 'https://github.com/githaefrancis/next-js-blog.git'
 '
       }
     }
