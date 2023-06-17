@@ -18,6 +18,7 @@ pipeline {
         sh """
         
         cd /home/frank/apps/next-blog/next-js-blog &&
+        sudo su frank &&
         pm2 stop next-blog &&
         sh git pull origin main &&
         npm run build &&
