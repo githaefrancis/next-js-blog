@@ -15,11 +15,14 @@ pipeline {
             
     stage('Deploy') {
       steps {
-        sh 'cd /home/frank/apps/next-blog/next-js-blog'
-        sh '/home/frank/.nvm/versions/node/v16.14.2/bin/pm2 stop next-blog'
+
+          dir('/home/frank/apps/next-blog/next-js-blog') {
+        sh 'pm2 stop next-blog'
         sh 'git pull origin main'
         sh 'npm run build'
-        sh '/home/frank/.nvm/versions/node/v16.14.2/bin/pm2 start next-blog'
+        sh 'pm2 start next-blog'        
+      }
+
       }
     }
   }
