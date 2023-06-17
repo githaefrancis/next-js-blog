@@ -15,8 +15,9 @@ pipeline {
             
     stage('Deploy') {
       steps {
-        sh  './home/frank/apps/next-blog/next-js-blog/refresh.sh'
-  
+        sh """
+          sudo -u frank bash -c "cd /home/frank/apps/next-blog/next-js-blog && ./refresh.sh"
+        """
       }
     }
   }
