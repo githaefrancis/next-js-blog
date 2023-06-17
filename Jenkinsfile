@@ -15,14 +15,8 @@ pipeline {
             
     stage('Deploy') {
       steps {
-        sh """
-        
-        cd /home/frank/apps/next-blog/next-js-blog &&
-        git pull origin main &&
-        npm run build &&
-        pm2 restart all
-
-        """
+        sh  './home/frank/apps/next-blog/next-js-blog/refresh.sh'
+  
       }
     }
   }
