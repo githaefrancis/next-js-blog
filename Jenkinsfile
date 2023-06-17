@@ -15,7 +15,7 @@ pipeline {
             
     stage('Deploy') {
       steps {
-        sh 'cd ~/apps/next-blog/next-js-blog'
+        sh 'cd /home/frank/apps/next-blog/next-js-blog'
         sh 'pm2 stop next-blog'
         sh 'git pull origin main'
         sh 'npm run build'
