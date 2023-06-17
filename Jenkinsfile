@@ -18,7 +18,7 @@ pipeline {
         sh """
         
         cd /home/frank/apps/next-blog/next-js-blog &&
-        sh git pull origin main &&
+        git pull origin main &&
         npm run build &&
         pm2 restart all
 
